@@ -1,0 +1,29 @@
+{
+    "categoryMenu": [
+        {
+            "name": "Bakery",
+            "path": "${routesPath.searchPage}",
+            "numberOfProducts": 0
+        },
+        {
+            "name": "Fruit and vegetables",
+            "path": "${routesPath.searchPage}",
+            "numberOfProducts": 0
+        },
+        {
+            "name": "Meat and fish",
+            "path": "${routesPath.searchPage}",
+            "numberOfProducts": 0
+        },
+        {
+            "name": "Drinks",
+            "path": "${routesPath.searchPage}",
+            "numberOfProducts": 0
+        },
+        {
+            "name": "Kitchen",
+            "path": "${routesPath.searchPage}",
+            "numberOfProducts": 0
+        }
+    ]
+}
