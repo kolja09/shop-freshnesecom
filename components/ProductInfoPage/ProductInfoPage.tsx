@@ -49,7 +49,12 @@ const ProductInfoPage = ({ product }: IProductInfoPageProps) => {
             {!product ? <></> :
                 <ProductInfoContainer>
                     <ImageWrapper>
-                        <Image width={569} height={436} src={product.productPhoto} alt='product'/>
+                        <Image
+                          width={569}
+                          height={436}
+                          src={product.productPhoto}
+                          alt={`${product.productPhoto}`}
+                        />
                         <TagsContainer>
                             {product.promotion && <ProductTag>{product.promotion}</ProductTag>}
                             <ProductTag>{product.tag}</ProductTag>

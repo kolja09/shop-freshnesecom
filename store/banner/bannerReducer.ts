@@ -1,16 +1,15 @@
-import { ACTION_TYPES } from "./action";
-import {BannerProps} from "../../static/types";
+import { ActionTypes, bannersAction, BannerState } from "./types";
 
-const initialState = {
-	banner: [] as BannerProps[],
+const initialState: BannerState = {
+	banner: [],
 }
 
-const bannerReducer = (state = initialState, action:any) => {
+const bannerReducer = (state = initialState, action:bannersAction):BannerState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_BANNER:
+		case ActionTypes.SET_BANNER:
 			return{
 				...state,
-				banner: action.payload
+				banner: action.payload,
 			}
 		default:
 			return state

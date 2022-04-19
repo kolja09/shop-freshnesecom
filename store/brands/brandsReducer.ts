@@ -1,12 +1,12 @@
-import { ACTION_TYPES } from "./action";
+import { ActionTypes, brandsAction, BrandsState } from "./types";
 
-const initialState = {
-	brands: [] as string[],
+const initialState: BrandsState = {
+	brands: [],
 }
 
-const brandsReducer = (state = initialState, action:any) => {
+const brandsReducer = (state = initialState, action:brandsAction): BrandsState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_BRANDS:
+		case ActionTypes.SET_BRANDS:
 			return{
 				...state,
 				brands: action.payload

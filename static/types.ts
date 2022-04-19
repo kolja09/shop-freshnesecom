@@ -1,15 +1,3 @@
-export interface commentProps {
-	id: string,
-	message: string,
-	name: string,
-	img: StaticImageData,
-}
-
-export interface BannerProps {
-	subtitle: string,
-	title: string,
-}
-
 interface LinkItemProps {
 	name: string,
 	link: string,

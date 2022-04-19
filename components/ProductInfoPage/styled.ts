@@ -63,17 +63,19 @@ export const InfoBlock = styled.div`
 `;
 
 export const ItemTitle = styled.div`
+  font-size: 18px;
+  font-weight: 600;
   color: #A9A9A9;
 `;
 
 export const ItemText = styled.p`
-  color: #151515;
+  color: #6A983C;
 `;
 
 export const ProductBuyBlock = styled.div`
   width: 534px;
   padding: 16px;
-  border: 1px solid #F5F5F5;
+  border: 3px solid #F5F5F5;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -101,7 +103,7 @@ export const NumberProductsAdded = styled.div`
 
 export const AddProductCart = styled.button`
   padding: 12px 16px;
-  background: #6A983C;
+  background-color: #6A983C;
   font-weight: bold;
   font-size: 15px;
   line-height: 22px;
@@ -110,6 +112,12 @@ export const AddProductCart = styled.button`
   border-radius: 12px;
   cursor: pointer;
   margin-left: 24px;
+	
+	&:hover{
+		background-color: #fff;
+		transition: 0.2s;
+		color: #46760A; 
+	}
 `;
 
 export const ProductPrice = styled.div`

@@ -4,8 +4,9 @@ import { useRouter } from "next/dist/client/router";
 import { routesPath } from "../../static/routesPath";
 
 import { NavigationsContainer, NavigateLink, NavigateBlock } from "./styled";
+import { INavigations } from "./types";
 
-const Navigations = () => {
+const Navigations = ({ nameLink, link, id }: INavigations) => {
 
     const router = useRouter();
 
@@ -13,14 +14,15 @@ const Navigations = () => {
         router.push({ pathname: routesPath.home })
     }
 
-    const routeBlog = () => {
-        router.push({ pathname: routesPath.blog })
+    const routePage = () => {
+        router.push({ pathname: link })
     }
     return (
         <NavigationsContainer>
             <NavigateBlock>
                 <NavigateLink onClick={routeHome}>Homepage</NavigateLink> /
-                <NavigateLink onClick={routeBlog}>Blog</NavigateLink>
+                <NavigateLink onClick={routePage}>{nameLink}</NavigateLink>
+                {id && '/'} <NavigateLink>{id}</NavigateLink>
             </NavigateBlock>
         </NavigationsContainer>
     );

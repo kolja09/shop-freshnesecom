@@ -8,6 +8,8 @@ export const SectionContainer = styled.div`
 
 export const ProductsContainer = styled.div`
   margin: 65px 0 73px;
-  display: flex;
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 30px;
   justify-content: space-between;
 `;

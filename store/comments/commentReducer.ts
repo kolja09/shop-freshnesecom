@@ -1,16 +1,15 @@
-import { ACTION_TYPES } from "./action";
-import { commentProps } from "../../static/types";
+import { ActionTypes, commentsAction, CommentsState } from "./types";
 
-const initialState = {
-	comments: [] as commentProps[],
+const initialState: CommentsState = {
+	comments: [],
 }
 
-const commentReducer = (state = initialState, action:any) => {
+const commentReducer = (state = initialState, action:commentsAction):CommentsState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_COMMENTS:
+		case ActionTypes.SET_COMMENTS:
 			return{
 				...state,
-				comments: action.payload
+				comments: action.payload,
 			}
 		default:
 			return state

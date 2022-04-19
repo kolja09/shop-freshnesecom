@@ -1,22 +1,27 @@
-import {ACTION_TYPES} from "./action";
+import { ActionTypes, productsAction, ProductsState } from "./types";
 
-const initialState = {
-	productItems: [] as ProductsProps[],
-	currentPage: 0 as number,
-	perPage: 9 as number,
+const initialState: ProductsState = {
+	productItems: [],
+	currentPage: 0,
+	perPage: 9,
+	rating:5,
 }
 
-const productReducer = (state = initialState, action:any) => {
+const productReducer = (state = initialState, action:productsAction):ProductsState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_PRODUCTS:
+		case ActionTypes.SET_PRODUCTS:
 			return{
 				...state,
 				productItems: action.payload,
 			}
-		case ACTION_TYPES.SET_PRODUCTS_CURRENT_PAGE:
+		case ActionTypes.SET_PRODUCTS_CURRENT_PAGE:
 			return {
 				...state,
-				currentPage: action.payload
+				currentPage: action.payload,
+			}
+		case ActionTypes.SET_RATING:
+			return {
+				...state, rating: action.payload
 			}
 		default:
 			return state

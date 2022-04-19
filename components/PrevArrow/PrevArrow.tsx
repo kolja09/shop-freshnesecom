@@ -4,8 +4,9 @@ import Image from "next/image";
 import prevArrow from "../../assets/img/arrow-black-left.svg";
 
 import { ArrowLeft } from './styled';
+import { IPrevArrow } from './types';
 
-const PrevArrow = ({onClick}:any) => {
+const PrevArrow = ({ onClick }: IPrevArrow) => {
     return (
         <ArrowLeft onClick={onClick}>
             <Image src={prevArrow} alt='prev-arrow'/>
@@ -14,3 +15,4 @@ const PrevArrow = ({onClick}:any) => {
 };
 
 export default PrevArrow;
+

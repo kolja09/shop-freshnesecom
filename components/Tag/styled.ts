@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const TagsContainer = styled.div`
-  position: absolute;
-  top: 24px;
-  left: 24px;
   background: #F4F8EC;
   border-radius: 12px;
   padding: 0 8px;

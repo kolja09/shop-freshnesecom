@@ -3,12 +3,34 @@ import styled from "styled-components";
 export const BigBlogCard = styled.div`
   display: flex;
   position: relative;
-  cursor: pointer;
+  cursor: pointer;  
 `;
 
 export const ImageInfoBlock = styled.div`
   border-radius: 12px;
   width: 100%;
+`;
+
+export const BigBlogTag = styled.div`
+  position: absolute;
+  top: 24px;
+  left: 24px;  
+`;
+
+export const PostTitle = styled.h2`
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 64px;
+  left: 24px;
+  width: 380px;
+    
+  &:hover{
+    color: #6A983C;
+    transition: 0.2s;  
+  }  
 `;
 
 export const PostDate = styled.div`
@@ -46,32 +68,27 @@ export const Date = styled.span<{
 `;
 
 export const MiddleBlogCard = styled.div`
-  cursor: pointer;
-`;
-
-export const TagContainer = styled.div`
-  margin-left: -24px;
   position: relative;
 `;
 
-export const PostTitle = styled.h2`
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 33px;
-  color: #FFFFFF;
+export const MiddleBlogTag = styled.div`
   position: absolute;
-  top: 228px;
-  left: 24px;
-  width: 380px;
+  margin-top: 20px;  
 `;
 
 export const MiddleBlogTitle = styled.h2`
+  margin-top: 50px;      
   width: 267px;
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
   color: #151515;
-  margin-top: 50px;
+  cursor: pointer;
+    
+  &:hover{
+    color: #6A983C;
+    transition: 0.2s;  
+  }  
 `;
 
 export const PostBlock = styled.div`
@@ -89,14 +106,21 @@ export const InfoContainer = styled.div`
 `;
 
 export const HeadlineTitle = styled.h3`
-  margin-top: 5px;
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
   color: #151515;
+  cursor: pointer;  
+  
+  &:hover{
+     color: #6A983C; 
+     transition: 0.2s; 
+  }  
 `;
 
-export const ImageBlock = styled.div``;
+export const ImageBlock = styled.div`
+  cursor: pointer;
+`;
 
 export const OpenedBlog = styled.div`
   padding: 48px 45px;
@@ -135,7 +159,7 @@ export const TextBlock = styled.div`
   margin-top: 15px;
 `;
 
-export const TitleText = styled.span`
+export const TitleText = styled.h5`
   margin-right: 32px;
   font-weight: 600;
   font-size: 12px;
@@ -143,7 +167,7 @@ export const TitleText = styled.span`
   color: #A9A9A9;
 `;
 
-export const Text = styled.span`
+export const Text = styled.p`
   text-decoration-line: underline;
   font-weight: 600;
   font-size: 12px;

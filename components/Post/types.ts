@@ -1,5 +1,5 @@
 export interface IPostProps {
 	blogType: string,
-	postInfo: any,
+	postInfo: PostProps,
 	isBlog?: boolean,
-};
+}

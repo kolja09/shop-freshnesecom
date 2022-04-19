@@ -1,19 +1,15 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import { ActionTypes, SetBlogsAction, SetBlogsCurrentPageAction } from "./types";
 
-export const ACTION_TYPES = {
-	SET_BLOGS: 'SET_BLOGS',
-	SET_BLOGS_CURRENT_PAGE:'SET_BLOGS_CURRENT_PAGE'
-}
-
-const setBlogs = (blogs:any) => ({
-	type: ACTION_TYPES.SET_BLOGS,
-	payload: blogs
+const setBlogs = (blogs:PostProps[]): SetBlogsAction => ({
+	type: ActionTypes.SET_BLOGS,
+	payload: blogs,
 });
 
-export const setBlogsCurrentPage = (page:any) => ({
-	type: ACTION_TYPES.SET_BLOGS_CURRENT_PAGE,
-	payload: page
+export const setBlogsCurrentPage = (page:number): SetBlogsCurrentPageAction => ({
+	type: ActionTypes.SET_BLOGS_CURRENT_PAGE,
+	payload: page,
 });
 
 export const loadBlogs = () => (dispatch:AppDispatch) => {

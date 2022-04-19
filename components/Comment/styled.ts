@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const CommentContainer = styled.div`
   margin: 69px 0 157px;
@@ -45,6 +46,10 @@ export const ImageContainer = styled.div`
   margin-top: 16px;
   display: flex;
   justify-content: center;
+`;
+
+export const PhotoUser = styled(Image)`
+  border-radius: 50%;
 `;
 
 

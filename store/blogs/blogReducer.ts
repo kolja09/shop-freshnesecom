@@ -1,19 +1,19 @@
-import { ACTION_TYPES } from "./action";
+import { ActionTypes, blogsAction, BlogsState } from "./types";
 
-const initialState = {
-	blog: [] as PostProps[],
-	currentPage:0 as number,
-	perPage: 9 as number,
+const initialState: BlogsState = {
+	blogs: [],
+	currentPage:0,
+	perPage: 9,
 }
 
-const blogReducer = (state = initialState, action:any) => {
+const blogReducer = (state = initialState, action:blogsAction):BlogsState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_BLOGS:
+		case ActionTypes.SET_BLOGS:
 			return{
 				...state,
-				blog: action.payload
+				blogs: action.payload,
 			}
-		case ACTION_TYPES.SET_BLOGS_CURRENT_PAGE:
+		case ActionTypes.SET_BLOGS_CURRENT_PAGE:
 			return {
 				...state,
 				currentPage: action.payload

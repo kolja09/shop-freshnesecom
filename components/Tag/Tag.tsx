@@ -4,7 +4,7 @@ import { ITagsProps } from './types';
 
 import { TagsContainer } from "./styled";
 
-const Tags = ({children}:ITagsProps) => {
+const Tag = ({children}:ITagsProps) => {
     return (
         <TagsContainer>
             {children}
@@ -12,4 +12,4 @@ const Tags = ({children}:ITagsProps) => {
     );
 };
 
-export default Tags;
+export default Tag;

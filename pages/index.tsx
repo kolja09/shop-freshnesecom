@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   const dispatch = useDispatch();
 
   const products = useSelector((products: RootState) => products.productReducer.productItems);
-  const postInfo = useSelector((blog: RootState) => blog.blogReducer.blog);
+  const postInfo = useSelector((blog: RootState) => blog.blogReducer.blogs);
 
   useEffect(() => {
     dispatch(loadProducts())

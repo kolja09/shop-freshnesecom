@@ -1,12 +1,9 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import { ActionTypes, SetBannersAction } from "./types";
 
-export const ACTION_TYPES = {
-	SET_BANNER: 'SET_BANNER'
-}
-
-const setBanner = (banner:any) => ({
-	type: ACTION_TYPES.SET_BANNER,
+const setBanner = (banner:BannerProps[]): SetBannersAction => ({
+	type: ActionTypes.SET_BANNER,
 	payload: banner
 });
 

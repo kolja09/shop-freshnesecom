@@ -1,3 +1,3 @@
 export interface ICategoryFood {
-	products:ProductsProps[]
+	products: ProductsProps[]
 }

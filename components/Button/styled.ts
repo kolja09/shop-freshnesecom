@@ -5,4 +5,10 @@ export const ButtonBlock = styled.a`
   background: #FFFFFF;
   border-radius: 12px;
   cursor: pointer;
+	
+	&:hover{
+    font-weight: bold;
+		transition: 0.2s;
+    color: #46760A;
+	}
 `;

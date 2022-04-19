@@ -2,7 +2,7 @@ import React  from 'react';
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 
-import Tags from "../Tags/Tags";
+import Tag from "../Tag/Tag";
 import { routesPath } from "../../static/routesPath";
 
 import { IPostProps } from "./types";
@@ -14,7 +14,6 @@ import {
     PostDate,
     PostTitle,
     MiddleBlogCard,
-    TagContainer,
     MiddleBlogTitle,
     BlogDate,
     HeadlineTitle,
@@ -28,13 +27,15 @@ import {
     Title,
     Text,
     TextBlock,
-    TitleText
+    TitleText,
+    BigBlogTag,
+    MiddleBlogTag
 } from "./styled";
 
 const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
     const router = useRouter();
 
-    const handleClick = () => {
+    const redirectToBlog = () => {
         router.push({pathname: `${routesPath.blog}/${postInfo.id}`})
     };
 
@@ -42,18 +43,25 @@ const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
         switch (blogType) {
             case 'bigBlogCard':
                 return (
-                    <BigBlogCard onClick={handleClick}>
+                    <BigBlogCard onClick={redirectToBlog}>
                         <ImageInfoBlock>
                             <Image
                                 src={postInfo.imgBlog}
-                                alt={'blog-photo'}
+                                alt={`${postInfo.imgBlog}`}
                                 height={400}
                                 width={isBlog ? 569 : 469}
                             />
-                            <Tags>{postInfo?.tag[0]}</Tags>
+                            <BigBlogTag>
+                                <Tag>{postInfo?.tag[0]}</Tag>
+                            </BigBlogTag>
                             <PostTitle>{postInfo?.title}</PostTitle>
                             <PostDate>
-                                <Image width={32} height={32} src={postInfo.userPhoto}/>
+                                <Image
+                                  width={32}
+                                  height={32}
+                                  src={postInfo.userPhoto}
+                                  alt={`${postInfo.userPhoto}`}
+                                />
                                 <Author $marginLeft={true} $color={true}>{postInfo.author}</Author>
                                 <Date $color={true}>{postInfo.date}</Date>
                             </PostDate>
@@ -62,17 +70,20 @@ const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
                 )
             case 'middleBlogCard':
                 return (
-                    <MiddleBlogCard onClick={handleClick}>
-                        <Image
-                            src={postInfo.imgBlog}
-                            alt={'blog-photo'}
-                            width={269}
-                            height={180}
-                        />
-                        <TagContainer>
-                            <Tags>{postInfo?.tag[0]}</Tags>
-                        </TagContainer>
-                        <MiddleBlogTitle>{postInfo.title}</MiddleBlogTitle>
+                    <MiddleBlogCard>
+                        <ImageBlock>
+                            <Image
+                              src={postInfo.imgBlog}
+                              alt={`${postInfo.imgBlog}`}
+                              width={269}
+                              height={180}
+                              onClick={redirectToBlog}
+                            />
+                        </ImageBlock>
+                        <MiddleBlogTag>
+                            <Tag>{postInfo?.tag[0]}</Tag>
+                        </MiddleBlogTag>
+                        <MiddleBlogTitle onClick={redirectToBlog}>{postInfo.title}</MiddleBlogTitle>
                         <BlogDate>
                             <Author $marginLeft={false} $color={false}>{postInfo.author}</Author>
                             <Date $color={false}>{postInfo.date}</Date>
@@ -81,7 +92,7 @@ const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
                 )
             case 'smallBlogCard':
                 return (
-                    <PostBlock key={postInfo.id} onClick={() => handleClick()}>
+                    <PostBlock key={postInfo.id} onClick={redirectToBlog}>
                         <InfoContainer>
                             <HeadlineTitle>{postInfo.title}</HeadlineTitle>
                             <BlogDate>
@@ -90,7 +101,12 @@ const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
                             </BlogDate>
                         </InfoContainer>
                         <ImageBlock>
-                            <Image width={96} height={96} src={postInfo.imgBlog}/>
+                            <Image
+                              width={96}
+                              height={96}
+                              alt={`${postInfo.imgBlog}`}
+                              src={postInfo.imgBlog}
+                            />
                         </ImageBlock>
                     </PostBlock>
                 )
@@ -98,7 +114,12 @@ const Post = ({ blogType, postInfo, isBlog = false }: IPostProps) => {
                 return (
                     <OpenedBlog>
                         <ImageContainer>
-                            <Image src={postInfo && postInfo.imgBlog} height={480} width={1170}/>
+                            <Image
+                              src={postInfo && postInfo.imgBlog}
+                              alt={`${postInfo.imgBlog}`}
+                              height={480}
+                              width={1170}
+                            />
                         </ImageContainer>
                         <InfoBlock>
                             <DateContainer>

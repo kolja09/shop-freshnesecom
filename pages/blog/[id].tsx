@@ -12,11 +12,12 @@ import Post from "../../components/Post/Post";
 import Content from '../../components/Content/Content';
 import SendComment from "../../components/SendComment/SendComment";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { routesPath } from "../../static/routesPath";
 
 import { RelatedTopicsContainer, RelatedTopicsBlock } from './styled';
 
 const Blog = () => {
-  const postInfo = useSelector((blog: RootState) => blog.blogReducer.blog);
+  const postInfo = useSelector((blog: RootState) => blog.blogReducer.blogs);
 
   const { query } = useRouter();
 
@@ -26,7 +27,7 @@ const Blog = () => {
     <>
       <Header/>
       <Search/>
-      <Navigations/>
+      <Navigations nameLink={'Blog'} link={`${routesPath.blog}`} id={currentPost.id}/>
       <Post blogType={'openedBlog'} postInfo={currentPost}/>
       <Content postInfo={currentPost}/>
       <SendComment/>

@@ -60,13 +60,12 @@ export const IconWrapper = styled.div`
 
 export const ProductsInCartCount = styled.div`
   position: absolute;
+  padding: 3px;	
   top: 13px;
   right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17px;
-  height: 17px;
   color: white;
   background-color: #E5704B;
   border-radius: 50%;
@@ -80,4 +79,4 @@ export const StyledImage = styled(Image)`
     transform: scale(1.1);
     animation-duration: 0.5s;
   }
-`
+`;

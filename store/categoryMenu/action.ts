@@ -1,12 +1,9 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import { ActionTypes, SetCategoryMenuAction } from "./types";
 
-export const ACTION_TYPES = {
-	SET_CATEGORY_MENU: 'SET_CATEGORY_MENU'
-}
-
-const setCategoryMenu = (categoryMenu: any) => ({
-	type: ACTION_TYPES.	SET_CATEGORY_MENU,
+const setCategoryMenu = (categoryMenu: CategoryMenuProps[]): SetCategoryMenuAction => ({
+	type: ActionTypes.SET_CATEGORY_MENU,
 	payload: categoryMenu
 });
 

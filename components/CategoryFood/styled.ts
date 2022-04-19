@@ -5,7 +5,8 @@ export const CategoryFoodContainer = styled.div`
 `;
 
 export const ProductsContainer = styled.div`
-  margin: 37px 0 142px;
+  padding-top: 37px;
+  padding-bottom: 140px;
   display: flex;
   justify-content: space-between;
 `;

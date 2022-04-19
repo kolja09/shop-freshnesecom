@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 
 import { RootState } from "../../store/store";
-import { BannerProps } from "../../static/types";
 import { loadBanner } from '../../store/banner/action';
 
 import CategoryMenu from '../CategoryMenu/CategoryMenu';
-import arrowRightGreen from './../../assets/img/Vector-green.svg';
 
 import {
 	CategoryContainer,
 	BannersContainer,
 	Banner,
-	BannerSubtitle,
-	BannerHeadline,
-	BannerButton,
+	Subtitle,
+	Headline,
+	Button,
 } from "./styled";
 
 const ProductCategory = () => {
@@ -34,9 +31,9 @@ const ProductCategory = () => {
 				{
 					banner.map((b: BannerProps, id: number) => (
 						<Banner key={id}>
-							<BannerSubtitle>{b.subtitle}</BannerSubtitle>
-							<BannerHeadline>{b.title}</BannerHeadline>
-							<BannerButton>Read recepies<Image src={arrowRightGreen}/></BannerButton>
+							<Subtitle>{b.subtitle}</Subtitle>
+							<Headline>{b.title}</Headline>
+							<Button>Read recipes</Button>
 						</Banner>
 					))
 				}

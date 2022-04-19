@@ -44,3 +44,15 @@ declare interface PostProps {
 	text: string,
 	foodRitual: FoodProps[],
 }
+
+declare interface CommentProps {
+	id: string,
+	message: string,
+	name: string,
+	img: StaticImageData,
+}
+
+declare interface BannerProps {
+	subtitle: string,
+	title: string,
+}

@@ -1,21 +1,27 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import {
+	ActionTypes,
+	SetProductsAction,
+	SetProductsCurrentPage,
+	SetRatingAction
+} from "./types";
 
-export const ACTION_TYPES = {
-	SET_PRODUCTS: 'SET_PRODUCTS',
-	SET_PRODUCTS_CURRENT_PAGE:'SET_PRODUCTS_CURRENT_PAGE'
-}
-
-const setProducts = (productItems:any) => ({
-	type: ACTION_TYPES.SET_PRODUCTS,
+const setProducts = (productItems: ProductsProps[]): SetProductsAction => ({
+	type: ActionTypes.SET_PRODUCTS,
 	payload: productItems
 });
 
-export const setProductsCurrentPage = (page:any) => ({
-	type: ACTION_TYPES.SET_PRODUCTS_CURRENT_PAGE,
+export const setProductsCurrentPage = (page:number): SetProductsCurrentPage => ({
+	type: ActionTypes.SET_PRODUCTS_CURRENT_PAGE,
 	payload: page
 });
 
-export const loadProducts = () => (dispatch:AppDispatch) => {
+export const setRating = (rating: number): SetRatingAction => ({
+	type: ActionTypes.SET_RATING,
+	payload: rating
+})
+
+export const loadProducts = () => (dispatch: AppDispatch) => {
 	apiService.getProducts().then(({data}) => dispatch(setProducts(data.products)))
-}
+};

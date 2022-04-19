@@ -19,11 +19,11 @@ const rootReducer = combineReducers({
 	tagReducer,
 	brandsReducer,
 	cartReducer,
-})
+});
 
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export default store
+export default store;

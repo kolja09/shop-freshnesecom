@@ -15,6 +15,10 @@ const Header = () => {
 
   const redirectToBlog = () => {
     router.push({ pathname: routesPath.blog })
+  };
+
+  const redirectToProducts = () => {
+    router.push({ pathname: routesPath.searchPage })
   }
 
   return (
@@ -37,6 +41,9 @@ const Header = () => {
       <LinksContainer>
         <LinkWrapper>
           <HeaderLink onClick={redirectToBlog}>Blog</HeaderLink>
+        </LinkWrapper>
+        <LinkWrapper>
+          <HeaderLink onClick={redirectToProducts}>Products</HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
           <HeaderLink>About Us</HeaderLink>

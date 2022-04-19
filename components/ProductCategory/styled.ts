@@ -25,7 +25,7 @@ export const Banner = styled.div`
   }
 `;
 
-export const BannerSubtitle = styled.span`
+export const Subtitle = styled.span`
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
@@ -33,7 +33,7 @@ export const BannerSubtitle = styled.span`
   margin-bottom: 8px;
 `;
 
-export const BannerHeadline = styled.h1`
+export const Headline = styled.h1`
   font-weight: 600;
   font-size: 22px;
   line-height: 33px;
@@ -41,14 +41,20 @@ export const BannerHeadline = styled.h1`
   margin-top: 8px;
 `;
 
-export const BannerButton = styled.a`
+export const Button = styled.a`
   padding: 12px 16px;
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
   color: #151515;
-  border: 2px solid #6A983C;
+  border: 2px solid #46760A;
   border-radius: 12px;
   background: transparent;
-  cursor: pointer ;
+  cursor: pointer;
+	
+	&:hover{
+		background: #6A983C;
+    transition: 0.2s;
+		color: #fff;
+	}
 `;

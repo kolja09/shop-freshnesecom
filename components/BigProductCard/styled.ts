@@ -1,37 +1,31 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const BigProductCardContainer = styled.div`
   display: flex;
-  align-items: center;
-  width: 869px;
-  height: 280px;
+  padding: 16px;
   border: 1px solid #D1D1D1;
   border-radius: 12px;
   margin: 0 32px 32px auto;
 `;
 
-export const ImageProductBlock = styled.div`
-  background: #F9F9F9;
+export const ImageProduct = styled(Image)`
   border-radius: 12px;
-  border: 1px solid #D1D1D1;
-  width: 268px;
-  height: 280px;
+	cursor: pointer;
 `;
 
-export const ProductInfoBlock = styled.div`
+export const InfoContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-left: 32px;
 `;
 
-export const ProductInfoWrapper = styled.div`
+export const InfoWrapper = styled.div`
   &:not(:first-of-type) {
-    margin-left: 128px;
+    margin-left: 50px;
   }
 `;
 
-export const ProductTitle = styled.h3`
+export const Title = styled.h3`
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
@@ -39,20 +33,20 @@ export const ProductTitle = styled.h3`
   margin-bottom: 4px;
 `;
 
-export const ProductText = styled.p`
+export const Text = styled.p`
   font-size: 12px;
   color: #575757;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 `;
 
 export const StarRatingBlock = styled.div`
-  margin-bottom: 27px;
+  margin-bottom: 25px;
 `;
 
 export const InfoFrame = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 12px;
+  grid-row-gap: 5px;
 `;
 
 export const InfoBlock = styled.div`
@@ -62,10 +56,12 @@ export const InfoBlock = styled.div`
 
 export const ItemTitle = styled.h2`
   color: #A9A9A9;
+  font-size: 20px;
 `;
 
 export const ItemText = styled.p`
   color: #6A983C;
+  font-size: 16px;
 `;
 
 export const ProductPrice = styled.div`
@@ -102,6 +98,7 @@ export const DetailButton = styled.button`
   line-height: 22px;
   color: #FFFFFF;
   cursor: pointer;
+  margin-top: 66px;
   margin-bottom: 12px;
 `;
 

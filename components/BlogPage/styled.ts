@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+export const BlogPageContainer = styled.div``;
+
 export const BlogPostsWrapper = styled.div`
   display: flex;
   justify-content: space-between;

@@ -6,12 +6,12 @@ export const NavigationsContainer = styled.div`
 
 export const NavigateBlock = styled.div`
   display: flex;
-`;
-
-export const NavigateLink = styled.a`
   font-size: 12px;
   line-height: 16px;
   color: #A9A9A9;
+`;
+
+export const NavigateLink = styled.a`
   cursor: pointer;
   margin-right: 8px;
 
@@ -21,5 +21,6 @@ export const NavigateLink = styled.a`
 
   &:hover{
     color: #6A983C;
+	  transition: 0.2s;
   }
 `;

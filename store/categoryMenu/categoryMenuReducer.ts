@@ -1,15 +1,15 @@
-import { ACTION_TYPES } from "./action";
+import { ActionTypes, categoryMenuAction, CategoryMenuState } from "./types";
 
-const initialState = {
-	categoryMenu: [] as CategoryMenuProps[],
+const initialState: CategoryMenuState = {
+	categoryMenu: [],
 }
 
-const commentReducer = (state = initialState, action:any) => {
+const commentReducer = (state = initialState, action: categoryMenuAction):CategoryMenuState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_CATEGORY_MENU:
+		case ActionTypes.SET_CATEGORY_MENU:
 			return{
 				...state,
-				categoryMenu: action.payload
+				categoryMenu: action.payload,
 			}
 		default:
 			return state

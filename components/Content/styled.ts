@@ -6,32 +6,33 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const TagsContainer = styled.div`
+export const TagsWrapper = styled.div`
   width: 169px;
 `;
 
-export const Tags = styled.div`
+export const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 50px;
 `;
 
-export const Tag = styled.div`
+export const TagBlock = styled.div`
   margin: 4px 4px;
-  padding: 4px 10px;
-  background-color: #F4F8EC;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 18px;
-  color: #6A983C;
-  border-radius: 12px;
 `;
 
-export const ButtonBack = styled.div`
+export const Button = styled.div`
+  cursor: pointer;
   font-size: 15px;
   line-height: 22px;
   font-weight: bold;
   color: #151515;
+	
+	&:hover{
+		color: #6A983C;
+    transform: scale(1.1);
+		transition: 0.2s;
+    animation-duration: 1s;
+	}
 `;
 
 export const Title = styled.h3`
@@ -42,9 +43,9 @@ export const Title = styled.h3`
   color: #151515;
 `;
 
-export const FoodRitualContainer = styled.div``;
+export const DescriptionContainer = styled.div``;
 
-export const FoodRitual = styled.div`
+export const FoodDescription = styled.div`
   width: 569px;
 `;
 

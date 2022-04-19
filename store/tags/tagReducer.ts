@@ -1,15 +1,15 @@
-import { ACTION_TYPES } from "./action";
+import { ActionTypes, tagsAction, TagsState } from "./types";
 
-const initialState = {
-	tags: [] as string[],
+const initialState: TagsState = {
+	tags: [],
 }
 
-const tagReducer = (state = initialState, action:any) => {
+const tagReducer = (state = initialState, action: tagsAction):TagsState => {
 	switch (action.type){
-		case ACTION_TYPES.SET_TAGS:
+		case ActionTypes.SET_TAGS:
 			return{
 				...state,
-				tags: action.payload
+				tags: action.payload,
 			}
 		default:
 			return state

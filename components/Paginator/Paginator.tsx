@@ -5,12 +5,12 @@ import { IAvailablePages, IPaginatorProps } from './types';
 import {
 	PaginatorContainer,
 	ProductsCountWrapper,
-	Tags,
 	Text,
 	StyledPaginateContainer,
 	StyledPageIndex,
 	ButtonPage
 } from "./styled";
+import Tag from '../Tag/Tag';
 
 const Paginator = ({ currentPage, length, pageCount, setCurrentPage }: IPaginatorProps) => {
 	const dispatch = useDispatch();
@@ -57,7 +57,7 @@ const Paginator = ({ currentPage, length, pageCount, setCurrentPage }: IPaginato
 				>Next Page</ButtonPage>
 			</StyledPaginateContainer>
 			<ProductsCountWrapper>
-				<Tags>{length}</Tags>
+				<Tag>{length}</Tag>
 				<Text>articles</Text>
 			</ProductsCountWrapper>
 		</PaginatorContainer>

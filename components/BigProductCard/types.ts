@@ -1,3 +1,3 @@
 export interface IBigProductCard {
-	product: ProductsProps
+	product: ProductsProps,
 }

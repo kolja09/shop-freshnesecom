@@ -1,15 +1,16 @@
-import {ACTION_TYPES} from "./action";
+import { ActionTypes, cartAction, CartState } from "./types";
 
-const initialState = {
-	items: {} as any,
-	totalPrice: 0 as number,
-	totalCount: 0 as number
+const initialState: CartState = {
+	items: [],
+	totalPrice: 0,
+	totalCount: 0,
 }
-const getTotalPrice = (arr: any) => arr.reduce((sum: number, obj: ProductsProps) => obj.price + sum, 0)
 
-const cartReducer = (state = initialState, action: any) => {
+const getTotalPrice = (arr: ProductsProps[]) => arr.reduce((sum: number, obj: ProductsProps) => obj.price + sum, 0);
+
+const cartReducer = (state = initialState, action: cartAction): CartState => {
 	switch (action.type) {
-		case ACTION_TYPES.ADD_PRODUCT_TO_CART: {
+		case ActionTypes.ADD_PRODUCT_TO_CART: {
 			const currentProductItems = !state.items[action.payload.id]
 				? [action.payload]
 				: [...state.items[action.payload.id].items, action.payload]
@@ -38,7 +39,7 @@ const cartReducer = (state = initialState, action: any) => {
 				totalPrice,
 			}
 		}
-		case ACTION_TYPES.REMOVE_CART_ITEM: {
+		case ActionTypes.REMOVE_CART_ITEM: {
 			const newItems = {
 				...state.items
 			}
@@ -53,7 +54,7 @@ const cartReducer = (state = initialState, action: any) => {
 				totalCount: state.totalCount - currentTotalCount,
 			};
 		}
-		case ACTION_TYPES.PLUS_CART_ITEM: {
+		case ActionTypes.PLUS_CART_ITEM: {
 			const newObjItems = [
 				...state.items[action.payload].items,
 				state.items[action.payload].items[0]
@@ -84,7 +85,7 @@ const cartReducer = (state = initialState, action: any) => {
 				totalCount,
 			}
 		}
-		case ACTION_TYPES.MINUS_CART_ITEM: {
+		case ActionTypes.MINUS_CART_ITEM: {
 			const oldItems = state.items[action.payload].items;
 			const newObjItems = oldItems.length > 1 ? state.items[action.payload].items.slice(1) : oldItems;
 

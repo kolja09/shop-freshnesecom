@@ -1,27 +1,30 @@
 import React from 'react';
 import Image from "next/image";
+import { router } from "next/client";
 
+import { routesPath } from "../../static/routesPath";
 import { SocialNetworkProps } from '../../static/types';
 import facebook from "../../assets/img/Facebook.svg";
 import pinterest from "../../assets/img/Pinterest.svg";
 import twitter from "../../assets/img/Twitter.svg";
 import linkedin from "../../assets/img/icon-linkedin.svg";
+import Tag from '../Tag/Tag';
 
 import { IContentProps } from './types';
 import {
   ContentContainer,
   TagsContainer,
-  Tags,
-  Tag,
-  ButtonBack,
+  TagsWrapper,
+  Button,
   Title,
-  FoodRitualContainer,
-  FoodRitual,
+  DescriptionContainer,
+  FoodDescription,
   Text,
   SocialNetworksBlock,
   SocialNetworkContainer,
   SocialName,
   TitleBlock,
+  TagBlock
 } from "./styled"
 
 const socialNetwork: SocialNetworkProps[] = [
@@ -48,23 +51,31 @@ const socialNetwork: SocialNetworkProps[] = [
 ];
 
 const Content = ({ postInfo }: IContentProps) => {
+
+  const redirectToBlog = () => {
+    router.push({ pathname: routesPath.blog })
+  };
+
+
   return (
     <ContentContainer>
-      <TagsContainer>
+      <TagsWrapper>
         <Title>Tags</Title>
-        <Tags>
+        <TagsContainer>
           {postInfo?.tag.map((t: string, idx: number) => (
-            <Tag key={idx}>{t}</Tag>
+            <TagBlock key={idx}>
+               <Tag>{t}</Tag>
+            </TagBlock>
           ))}
-        </Tags>
-        <ButtonBack>Back to Blog</ButtonBack>
-      </TagsContainer>
-      <FoodRitualContainer>
-        {postInfo?.foodRitual.map((el: any, idx: number) => (
-          <FoodRitual key={idx}>
+        </TagsContainer>
+        <Button onClick={redirectToBlog}>Back to Blog</Button>
+      </TagsWrapper>
+      <DescriptionContainer>
+        {postInfo?.foodRitual.map((el: FoodProps, idx: number) => (
+          <FoodDescription key={idx}>
             <Title>{el.title}</Title>
             <Text>{el.text}</Text>
-          </FoodRitual>
+          </FoodDescription>
         ))}
         <SocialNetworksBlock>
           <TitleBlock>
@@ -77,7 +88,7 @@ const Content = ({ postInfo }: IContentProps) => {
             </SocialNetworkContainer>
           ))}
         </SocialNetworksBlock>
-      </FoodRitualContainer>
+      </DescriptionContainer>
     </ContentContainer>
   );
 };

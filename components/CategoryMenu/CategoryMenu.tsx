@@ -24,16 +24,12 @@ const CategoryMenu = ({ title }: ICategoryMenuProps) => {
     dispatch(loadCategoryMenu())
   }, []);
 
-  const handleClick = (routePathname: string) => {
-    router.push({pathname: `${routePathname}`})
-  };
-
   return (
     <Container>
       <Title>{title}</Title>
       <LinksContainer>
         {categoryMenu.map((item: CategoryMenuProps, id: number) => (
-          <Link key={id} onClick={() => handleClick(item.path)}>{item.name}</Link>
+          <Link key={id}>{item.name}</Link>
         ))}
       </LinksContainer>
     </Container>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/dist/client/router";
 
 import { RootState } from "../../store/store";
+
 import Cart from '../Cart/Cart';
 import imgLogo from '/assets/img/logo.svg';
 import searchIcon from '/assets/img/ic-actions-search.svg';
@@ -24,17 +25,14 @@ import {
 
 const Search = () => {
   const router = useRouter();
+
   const [inputIsSelected, setInputIsSelected] = useState<boolean>(false);
-  const [cartIsEmpty, setCartIsEmpty] = useState<boolean>(true)
+  const [cartIsEmpty, setCartIsEmpty] = useState<boolean>(false);
 
   const totalCartCount = useSelector((totalCount: RootState) => totalCount.cartReducer.totalCount);
 
   const redirectToHomePage = () => {
-    router.push({pathname: routesPath.home})
-  };
-
-  const handleSearch = () => {
-    router.push({pathname: routesPath.searchPage})
+    router.push({ pathname: routesPath.home })
   };
 
   const handleInputFocus = () => {
@@ -50,16 +48,16 @@ const Search = () => {
       <Logo src={imgLogo} alt='logo' onClick={redirectToHomePage}/>
       <SearchContainer $focus={inputIsSelected}>
         <SearchInput type='text' placeholder='Search...' onFocus={handleInputFocus} onBlur={handleInputBlur}/>
-        <SearchIcon src={searchIcon} alt='search' onClick={handleSearch}/>
+        <SearchIcon src={searchIcon} alt='search'/>
       </SearchContainer>
       <IconsContainer>
         <IconWrapper>
           <StyledImage src={userIcon} alt='user-icon'/>
         </IconWrapper>
-        <IconWrapper>
-          <StyledImage onClick={() => setCartIsEmpty(false)} src={basketIcon} alt='basket-icon'/>
+        <IconWrapper onClick={() => setCartIsEmpty(true)}>
+          <StyledImage src={basketIcon} alt='basket-icon'/>
           {totalCartCount === 0 ? '' : <ProductsInCartCount>{totalCartCount}</ProductsInCartCount>}
-          {!cartIsEmpty ? <Cart
+          {cartIsEmpty ? <Cart
             setCartIsEmpty={setCartIsEmpty}
           /> : null}
         </IconWrapper>

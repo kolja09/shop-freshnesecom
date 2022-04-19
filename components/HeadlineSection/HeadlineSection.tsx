@@ -3,8 +3,9 @@ import Image from "next/image";
 
 import view1 from './../../assets/img/ic-layout-square-grid.svg';
 import view2 from './../../assets/img/ic-layout-sections.svg';
+import Tag from "../Tag/Tag";
 
-import { IHeadlineSectionProps } from "./types";
+import { IHeadlineSection } from "./types";
 import {
     HeadlineContainer,
     Title,
@@ -13,13 +14,12 @@ import {
     ViewText,
     ProductsCountWrapper,
     Text,
-    Tag
 } from "./styled";
 
-const HeadlineSection = ({ length, setGridView }: IHeadlineSectionProps) => {
+const HeadlineSection = ({ length, setGridView, namePage }: IHeadlineSection) => {
     return (
         <HeadlineContainer>
-            <Title>Fruit and vegetables</Title>
+            <Title>{namePage}</Title>
             <ViewsContainer>
                 <ViewBlock onClick={() => setGridView && setGridView(false)}>
                     <Image src={view1} />

@@ -1,18 +1,20 @@
 import React from 'react';
 import Image from "next/image";
+import { useRouter } from "next/dist/client/router";
 
 import whiteArrow from './../../assets/img/white-arrow.svg';
 import heart from './../../assets/img/heart.svg';
 import StarRating from '../StarRating/StarRating';
+import { routesPath } from "../../static/routesPath";
 
 import { IBigProductCard } from './types';
 import {
   BigProductCardContainer,
-  ImageProductBlock,
-  ProductInfoBlock,
-  ProductInfoWrapper,
-  ProductTitle,
-  ProductText,
+  ImageProduct,
+  InfoContainer,
+  InfoWrapper,
+  Title,
+  Text,
   StarRatingBlock,
   InfoBlock,
   InfoFrame,
@@ -29,13 +31,24 @@ import {
 } from "./styled";
 
 const BigProductCard = ({ product }: IBigProductCard) => {
+  const router = useRouter();
+
+  const redirectToProduct = () => {
+    router.push({pathname: `${routesPath.searchPage}/${product?.id}`})
+  };
+
   return (
     <BigProductCardContainer>
-      <ImageProductBlock/>
-      <ProductInfoBlock>
-        <ProductInfoWrapper>
-          <ProductTitle>{product.title}</ProductTitle>
-          <ProductText>{product.text}</ProductText>
+      <ImageProduct
+        onClick={redirectToProduct}
+        width={268} height={279}
+        src={product.productPhoto}
+        alt={`${product.productPhoto}`}
+      />
+      <InfoContainer>
+        <InfoWrapper>
+          <Title>{product.title}</Title>
+          <Text>{product.text}</Text>
           <StarRatingBlock>
             <StarRating rating={product.numberStar}/>
           </StarRatingBlock>
@@ -57,8 +70,8 @@ const BigProductCard = ({ product }: IBigProductCard) => {
               <ItemText>{product.stock}</ItemText>
             </InfoBlock>
           </InfoFrame>
-        </ProductInfoWrapper>
-        <ProductInfoWrapper>
+        </InfoWrapper>
+        <InfoWrapper>
           <PriceBlock>
             <ProductPrice>{product.price} USD</ProductPrice>
             <OldPrice>{product.oldPrice}</OldPrice>
@@ -67,12 +80,12 @@ const BigProductCard = ({ product }: IBigProductCard) => {
             <DeliveryItem>Free Shipping</DeliveryItem>
             <DeliveryText>Delivery in 1 day</DeliveryText>
           </InfoAboutDelivery>
-          <DetailButton>
+          <DetailButton onClick={redirectToProduct}>
             Product Detail <Image src={whiteArrow}/>
           </DetailButton>
           <AddButton><Image src={heart}/>Add to wish list</AddButton>
-        </ProductInfoWrapper>
-      </ProductInfoBlock>
+        </InfoWrapper>
+      </InfoContainer>
     </BigProductCardContainer>
   );
 };

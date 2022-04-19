@@ -1,12 +1,9 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import { ActionTypes, SetCommentsAction } from "./types";
 
-export const ACTION_TYPES = {
-	SET_COMMENTS: 'SET_COMMENTS'
-}
-
-const setComments = (comments:any) => ({
-	type: ACTION_TYPES.SET_COMMENTS,
+const setComments = (comments:CommentProps[]): SetCommentsAction => ({
+	type: ActionTypes.SET_COMMENTS,
 	payload: comments
 });
 

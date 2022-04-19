@@ -6,6 +6,4 @@ export const HeadlineContainer = styled.div`
   align-items: center;
 `;
 
-export const Headline = styled.h3`
-
-`;
+export const Headline = styled.h3``;

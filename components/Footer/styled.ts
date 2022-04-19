@@ -63,6 +63,14 @@ export const Tag = styled.button`
   margin-top: 8px;
   margin-bottom: 8px;
   cursor: pointer;
+	
+	&:hover{
+		color: #6A983C;
+		background: #F4F8EC;
+    transform: scale(1.1);
+		transition: 0.2s;
+    animation-duration: 0.5s;
+	}
 `;
 
 export const TextBlog = styled.div`

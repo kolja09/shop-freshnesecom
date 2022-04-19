@@ -1,18 +1,15 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const ProductBlock = styled.div`
-  padding: 16px;
+export const ProductContainer = styled.div`
+  padding: 15px;
   display: flex;
+	height: 360px;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+	align-items: center;
   border: 1px solid #D1D1D1;
   border-radius: 12px;
-  cursor:pointer;
-  
-  &:not(:last-of-type) {
-    margin-right: 32px;
-  }
 `;
 
 export const ProductPromotion = styled.div`
@@ -25,26 +22,31 @@ export const ProductPromotion = styled.div`
   color: #6A983C;
 `;
 
-export const ProductImageBlock = styled.div`
+export const ImageBlock = styled.div`
   margin-bottom: 16px;
+	cursor: pointer;
 `;
 
 export const ProductImg = styled(Image)`
   border-radius: 12px;
 `;
 
-export const ProductTitle = styled.h5`
+export const Title = styled.h5`
   font-size: 15px;
   line-height: 22px;
   color: #151515;
   margin-bottom: 4px;
 `;
 
-export const ProductText = styled.span`
+export const Text = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: #575757;
   margin-bottom: 16px;
+`;
+
+export const StarBlock = styled.div`
+  margin-bottom: 12px;
 `;
 
 export const ProductBuyBlock = styled.div`
@@ -79,12 +81,14 @@ export const ProductButton = styled.button`
   font-size: 15px;
   line-height: 22px;
   color: #fff;
-  background: #6A983C;
+  background-color: #6A983C;
   border: 2px solid #46760A;
   border-radius: 12px;
   cursor: pointer;
-`;
-
-export const StarContainer = styled.div`
-  margin-bottom: 12px;
+	
+	&:hover{
+		background-color: #fff;
+    transition: 0.2s;
+		color: #46760A;
+	}
 `;

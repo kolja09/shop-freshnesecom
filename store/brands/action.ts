@@ -1,12 +1,9 @@
 import { apiService } from "../../api/api";
 import { AppDispatch } from "../store";
+import { ActionTypes, SetBrandsAction } from "./types";
 
-export const ACTION_TYPES = {
-	SET_BRANDS: 'SET_BRANDS'
-}
-
-const setBrands = (brands:any) => ({
-	type: ACTION_TYPES.SET_BRANDS,
+const setBrands = (brands:string[]): SetBrandsAction => ({
+	type: ActionTypes.SET_BRANDS,
 	payload: brands
 });
 

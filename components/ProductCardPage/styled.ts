@@ -9,9 +9,11 @@ export const MainContainer = styled.div`
 `;
 
 export const ProductsSmallCardsContainer = styled.div`
+  margin-right: 35px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 48px;
+	gap: 25px;
 `;
 
 export const ProductsBigCardsContainer = styled.div``;

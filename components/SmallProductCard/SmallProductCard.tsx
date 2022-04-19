@@ -6,47 +6,52 @@ import { routesPath } from "../../static/routesPath";
 
 import { IProductCardProps } from "./types";
 import {
+	ProductContainer,
 	OldPrice,
 	PriceBlock,
-	ProductBlock,
 	ProductButton,
 	ProductBuyBlock,
 	ProductPrice,
 	ProductPromotion,
-	ProductText,
-	ProductTitle,
-	StarContainer,
+	Text,
+	Title,
+	StarBlock,
 	ProductImg,
-	ProductImageBlock
+	ImageBlock
 } from "./styled";
 
 const ProductCard = ({ product }: IProductCardProps) => {
 	const router = useRouter();
 
-	const handleClick = () => {
+	const redirectToProduct = () => {
 		router.push({pathname: `${routesPath.searchPage}/${product?.id}`})
 	};
 
 	return (
-		<ProductBlock onClick={handleClick}>
+		<ProductContainer>
 			{product.promotion && <ProductPromotion>{product.promotion}</ProductPromotion>}
-			<ProductImageBlock>
+			<ImageBlock onClick={redirectToProduct}>
 				{product.productPhoto &&
-					<ProductImg width={236} height={180} src={product.productPhoto} alt={'product-photo'}/>}
-			</ProductImageBlock>
-			<ProductTitle>{product.title}</ProductTitle>
-			<ProductText>{product.text}</ProductText>
-			<StarContainer>
+					<ProductImg
+						width={236}
+						height={180}
+						src={product.productPhoto}
+						alt={`${product.productPhoto}`}
+					/>}
+			</ImageBlock>
+			<Title>{product.title}</Title>
+			<Text>{product.text}</Text>
+			<StarBlock>
 				<StarRating rating={product.numberStar}/>
-			</StarContainer>
+			</StarBlock>
 			<ProductBuyBlock>
 				<PriceBlock>
 					<ProductPrice>{product.price} USD</ProductPrice>
 					<OldPrice>{product.oldPrice}</OldPrice>
 				</PriceBlock>
-				<ProductButton>Buy now</ProductButton>
+				<ProductButton onClick={redirectToProduct}>Buy now</ProductButton>
 			</ProductBuyBlock>
-		</ProductBlock>
+		</ProductContainer>
 	);
 };
 

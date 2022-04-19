@@ -36,17 +36,6 @@ export const ProductsCountWrapper = styled.div`
   display: flex;
 `;
 
-export const Tag = styled.div`
-  background: #F4F8EC;
-  border-radius: 12px;
-  padding: 0 8px;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 18px;
-  color: #6A983C;
-
-`;
-
 export const Text = styled.div`
   margin-left: 3px;
   font-size: 12px;

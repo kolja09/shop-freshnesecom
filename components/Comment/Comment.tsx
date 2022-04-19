@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,7 +10,6 @@ import { RootState } from "../../store/store";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import NextArrow from '../NextArrow/NextArrow';
 import PrevArrow from "../PrevArrow/PrevArrow";
-import { commentProps } from "../../static/types";
 
 import {
 	CommentContainer,
@@ -20,6 +18,7 @@ import {
 	UsersCommentsContainer,
 	CommentText,
 	User,
+	PhotoUser,
 	ImageContainer,
 } from "./styled";
 
@@ -38,7 +37,7 @@ const Comment = () => {
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		nextArrow: <NextArrow/>,
-		prevArrow: <PrevArrow/>
+		prevArrow: <PrevArrow />
 	};
 
 	return (
@@ -48,12 +47,17 @@ const Comment = () => {
 			</SectionTitleWrapper>
 			<UsersCommentsContainer>
 				<Slider {...settings}>
-					{comments.map((c: commentProps) => (
+					{comments.map((c: CommentProps) => (
 						<UserCommentBlock key={c.id}>
 							<CommentText>{c.message}</CommentText>
 							<User>{c.name}</User>
 							<ImageContainer>
-								<Image width={48} height={48} src={c.img} alt='user-photo'/>
+								<PhotoUser
+									width={48}
+									height={48}
+									src={c.img}
+									alt={`${c.img}`}
+								/>
 							</ImageContainer>
 						</UserCommentBlock>
 					))}
