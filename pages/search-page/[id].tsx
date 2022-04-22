@@ -13,20 +13,20 @@ import { routesPath } from "../../static/routesPath";
 
 const ProductCard = () => {
 
-    const products = useSelector((products:RootState) => products.productReducer.productItems);
+	const products = useSelector((products: RootState) => products.productReducer.productItems);
 
-    const { query } = useRouter();
+	const {query} = useRouter();
 
-    const currentProduct = products?.filter((product: ProductsProps) => product.id === query.id)[0];
+	const currentProduct = products?.filter((product: ProductsProps) => product.id === query.id)[0];
 
-    return (
-        <>
-            <Header/>
-            <Search/>
-            <Navigations nameLink={'Products'} link={`${routesPath.searchPage}`} id={currentProduct.id}/>
-            <ProductInfoPage product={currentProduct}/>
-            <Footer/>
-        </>
-    )
+	return (
+		<>
+			<Header/>
+			<Search/>
+			<Navigations nameLink={'Products'} link={`${routesPath.searchPage}`} id={currentProduct.id}/>
+			<ProductInfoPage product={currentProduct}/>
+			<Footer/>
+		</>
+	)
 }
 export default ProductCard;

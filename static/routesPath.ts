@@ -1,5 +1,5 @@
 export const routesPath = {
-    home: "/",
-    blog: "/blog",
-    searchPage: "/search-page",
+	home: "/",
+	blog: "/blog",
+	searchPage: "/search-page",
 }

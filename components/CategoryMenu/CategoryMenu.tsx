@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/dist/client/router";
 
 import { RootState } from "../../store/store";
 import { loadCategoryMenu } from "../../store/categoryMenu/action";
@@ -15,8 +14,6 @@ import {
 
 const CategoryMenu = ({ title }: ICategoryMenuProps) => {
   const dispatch = useDispatch();
-
-  const router = useRouter();
 
   const categoryMenu = useSelector((categoryMenu: RootState) => categoryMenu.categoryMenuReducer.categoryMenu);
 

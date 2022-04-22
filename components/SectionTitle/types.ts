@@ -1,4 +1,5 @@
 export interface ISectionTitle {
     title: string,
-    button: string,
+    button?: string,
+    linkToPage?: string,
 }

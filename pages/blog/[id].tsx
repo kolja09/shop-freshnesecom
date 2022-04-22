@@ -32,7 +32,7 @@ const Blog = () => {
       <Content postInfo={currentPost}/>
       <SendComment/>
       <RelatedTopicsContainer>
-        <SectionTitle title={'Related topics'} button={'Button'}/>
+        <SectionTitle title={'Related topics'} button={'More blogs'} linkToPage={`${routesPath.blog}`}/>
         <RelatedTopicsBlock>
           {postInfo.slice(2, 6).map((el: PostProps, idx: number) => (
             <Post blogType={'middleBlogCard'} postInfo={el} key={idx}/>

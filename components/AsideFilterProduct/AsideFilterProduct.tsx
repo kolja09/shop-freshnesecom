@@ -75,7 +75,7 @@ const AsideFilterProduct = () => {
 					{categoryMenu.map((el: CategoryMenuProps, idx: number) => (
 						<LinkBlock key={idx}>
 							<LinkCategory>{el.name}</LinkCategory>
-							<Tag>{el.numberOfProducts}</Tag>
+							<Tag>{0}</Tag>
 						</LinkBlock>
 					))}
 				</LinksContainer>

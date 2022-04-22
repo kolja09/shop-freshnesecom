@@ -43,7 +43,7 @@ const Comment = () => {
 	return (
 		<CommentContainer>
 			<SectionTitleWrapper>
-				<SectionTitle title='Our customers says' button='Button'/>
+				<SectionTitle title='Our customers says' />
 			</SectionTitleWrapper>
 			<UsersCommentsContainer>
 				<Slider {...settings}>

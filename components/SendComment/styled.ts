@@ -83,7 +83,7 @@ export const SendCommentButton = styled.button`
   color: #FFFFFF;
   cursor: pointer;
   
-  &:hover, &:active {
+  &:hover {
     background-color: #46760A;
     color: #a9a9a9;
   }

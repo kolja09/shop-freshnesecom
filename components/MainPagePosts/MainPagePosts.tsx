@@ -1,5 +1,6 @@
 import React  from 'react';
 
+import { routesPath } from '../../static/routesPath';
 import SectionTitle from "../SectionTitle/SectionTitle";
 import Post from "../Post/Post";
 
@@ -9,7 +10,7 @@ import { IMainPagePosts } from "./types";
 const MainPagePosts = ({ postInfo }: IMainPagePosts) => {
 	return (
 		<BlogPostsContainer>
-			<SectionTitle title="Read our Blog posts" button="Go to Blog"/>
+			<SectionTitle title="Read our Blog posts" button="Go to Blog" linkToPage={`${routesPath.blog}`}/>
 			<PostsContainer>
 				<Post blogType={'bigBlogCard'} postInfo={postInfo[0]}/>
 				<Post blogType={'middleBlogCard'} postInfo={postInfo[5]}/>

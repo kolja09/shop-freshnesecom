@@ -13,11 +13,6 @@ import {
 } from "./styled";
 
 const SendComment = () => {
-  
-  const handleSubmit = () => {
-    console.log("message sent");
-  };
-
   return (
     <FormContainer>
       <Title>Leave a reply</Title>
@@ -36,7 +31,7 @@ const SendComment = () => {
         <Label>Comment</Label>
         <Textarea placeholder='Enter your comments'/>
       </InputContainer>
-      <SendCommentButton type="submit" onSubmit={handleSubmit}>Send a comment</SendCommentButton>
+      <SendCommentButton disabled >Send a comment</SendCommentButton>
     </FormContainer>
   );
 };
