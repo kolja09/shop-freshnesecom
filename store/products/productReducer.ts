@@ -4,7 +4,6 @@ const initialState: ProductsState = {
 	productItems: [],
 	currentPage: 0,
 	perPage: 9,
-	rating:5,
 }
 
 const productReducer = (state = initialState, action:productsAction):ProductsState => {
@@ -18,10 +17,6 @@ const productReducer = (state = initialState, action:productsAction):ProductsSta
 			return {
 				...state,
 				currentPage: action.payload,
-			}
-		case ActionTypes.SET_RATING:
-			return {
-				...state, rating: action.payload
 			}
 		default:
 			return state

@@ -8,7 +8,6 @@ import { loadBlogs } from "../store/blogs/action";
 
 import Header from "../components/Header/Header";
 import Search from '../components/Search/Search';
-import ProductCategory from "../components/ProductCategory/ProductCategory";
 import ProductsSection from "../components/ProductsSection/ProductsSection";
 import Comment from "../components/Comment/Comment";
 import CategoryFood from "../components/CategoryFood/CategoryFood";
@@ -34,9 +33,9 @@ const Home: NextPage = () => {
     <>
       <Header/>
       <Search/>
-      <ProductCategory/>
       <ProductsSection products={products.slice(0, 3)}/>
       <ProductsSection products={products.slice(3, 6)}/>
+      <ProductsSection products={products.slice(6, 9)}/>
       <Comment/>
       <CategoryFood products={products}/>
       <MainPagePosts postInfo={postInfo}/>

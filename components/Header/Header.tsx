@@ -28,13 +28,13 @@ const Header = () => {
           <HeaderLink>Chat with us</HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
-          <HeaderLink href="tel: 420 336 775 664" $color="#151515">
-            +420 336 775 664
+          <HeaderLink href="tel:+380 97 404 23 56" $color="#151515">
+            +380 97 404 23 56
           </HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
           <HeaderLink href="mailto: info@freshnesecom.com" $color="#151515">
-            info@freshnesecom.com
+            kolja9062005@gmail.com
           </HeaderLink>
         </LinkWrapper>
       </LinksContainer>

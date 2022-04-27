@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "../../store/store";
 import { loadTags } from "../../store/tags/action";
+
 import { LinkProps } from '../../static/types';
 
 import {
@@ -26,19 +27,19 @@ const links: LinkProps[] = [
 		item: [
 			{
 				name: "About Us",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Careers",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Press Releases",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Blog",
-				link: ""
+				link: "#"
 			}
 		]
 	},
@@ -47,23 +48,23 @@ const links: LinkProps[] = [
 		item: [
 			{
 				name: "Facebook",
-				link: ""
+				link: "https://uk-ua.facebook.com"
 			},
 			{
 				name: "Twitter",
-				link: ""
+				link: "https://twitter.com/?lang=uk"
 			},
 			{
 				name: "Instagram",
-				link: ""
+				link: "https://instagram.com"
 			},
 			{
 				name: "Youtube",
-				link: ""
+				link: "https://www.youtube.com "
 			},
 			{
 				name: "LinkedIn",
-				link: ""
+				link: "https://www.linkedin.com/in/kolja09/"
 			}
 		]
 	},
@@ -72,15 +73,15 @@ const links: LinkProps[] = [
 		item: [
 			{
 				name: "Become an Affiliate",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Advertise your product",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Sell on Market",
-				link: ""
+				link: "#"
 			}
 		]
 	},
@@ -89,23 +90,23 @@ const links: LinkProps[] = [
 		item: [
 			{
 				name: "Your account",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Returns Centre",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "100% purchase protection",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Chat with us",
-				link: ""
+				link: "#"
 			},
 			{
 				name: "Help",
-				link: ""
+				link: "#"
 			}
 		]
 	}
@@ -129,7 +130,7 @@ const Footer = () => {
 						<ItemsContainer>
 							{el.item.map((i, idx) => (
 								<ItemBlock key={idx}>
-									<LinkItem>{i.name}</LinkItem>
+									<LinkItem href={i.link}>{i.name}</LinkItem>
 								</ItemBlock>
 							))
 							}

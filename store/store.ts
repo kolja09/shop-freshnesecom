@@ -1,10 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import thunkMiddleware  from 'redux-thunk'
+import thunkMiddleware  from 'redux-thunk';
 
 import blogReducer from "./blogs/blogReducer";
 import productReducer from "./products/productReducer";
 import commentReducer from "./comments/commentReducer";
-import bannerReducer from "./banner/bannerReducer";
 import categoryMenuReducer from "./categoryMenu/categoryMenuReducer";
 import tagReducer from "./tags/tagReducer";
 import brandsReducer from "./brands/brandsReducer";
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
 	productReducer,
 	blogReducer,
 	commentReducer,
-	bannerReducer,
 	categoryMenuReducer,
 	tagReducer,
 	brandsReducer,

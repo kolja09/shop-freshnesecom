@@ -12,7 +12,7 @@ import {
 const ProductsSection = ({ products }: IBestSellingProductsProps) => {
   return (
     <SectionContainer>
-      <CategoryMenu title={'Best selling products'}/>
+      <CategoryMenu title={'Category menu'}/>
       <ProductsContainer>
         {products.map((p: ProductsProps) => (
           <ProductCard key={p.id} product={p}/>

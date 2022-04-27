@@ -102,10 +102,10 @@ const AsideFilterProduct = () => {
 					</Label>
 				))}
 			</RatingContainer>
-			<SliderContainer>
-				<Title>Price</Title>
-				<RangeSlider min={0} max={100}/>
-			</SliderContainer>
+			{/*<SliderContainer>*/}
+			{/*	<Title>Price</Title>*/}
+			{/*	<RangeSlider min={0} max={100}/>*/}
+			{/*</SliderContainer>*/}
 		</AsideFilterProductContainer>
 	);
 };

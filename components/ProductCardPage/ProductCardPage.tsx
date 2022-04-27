@@ -28,7 +28,7 @@ const ProductCardPage = () => {
 	const pageCount = Math.ceil(products.length / perPage);
 	const pagesVisited = currentPage * perPage;
 
-	const [gridView, setGridView] = useState(false)
+	const [gridView, setGridView] = useState(false);
 	// const [filteredProducts, setFilteredProducts] = useState(products);
 	// const [filterOptions, setFilterOptions] = useState<IFilterOptions>({
 	// 	selectedCategory: "",
