@@ -22,11 +22,11 @@ const HeadlineSection = ({ length, setGridView, namePage }: IHeadlineSection) =>
             <Title>{namePage}</Title>
             <ViewsContainer>
                 <ViewBlock onClick={() => setGridView && setGridView(false)}>
-                    <Image src={view1} />
+                    <Image src={view1} alt={"square"}/>
                     <ViewText>Grid view</ViewText>
                 </ViewBlock>
                 <ViewBlock onClick={() => setGridView && setGridView(true)}>
-                    <Image src={view2} />
+                    <Image src={view2} alt={"square-2"}/>
                     <ViewText>List view</ViewText>
                 </ViewBlock>
                 <ProductsCountWrapper>

@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import store from "../store/store";
 
-import './globals.css'
+import '../globals.css'
 
 const PageWrapper = styled.div`
   margin: 0 auto;

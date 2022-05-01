@@ -9,7 +9,7 @@ import { ButtonBlock } from "./styled";
 const Button = ({ children, redirectToPage }: IButtonProps) => {
 	return (
 		<ButtonBlock onClick={redirectToPage}>
-			{children} <Image src={ArrowGreen}/>
+			{children} <Image src={ArrowGreen} alt={"arrow"}/>
 		</ButtonBlock>
 	);
 };

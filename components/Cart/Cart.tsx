@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 import { RootState } from "../../store/store";
 import { removeCartItem, plusCartItem, minusCartItem } from "../../store/cart/action";

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 import whiteArrow from './../../assets/img/white-arrow.svg';
 import heart from './../../assets/img/heart.svg';
@@ -81,9 +81,9 @@ const BigProductCard = ({ product }: IBigProductCard) => {
             <DeliveryText>Delivery in 1 day</DeliveryText>
           </InfoAboutDelivery>
           <DetailButton onClick={redirectToProduct}>
-            Product Detail <Image src={whiteArrow}/>
+            Product Detail <Image src={whiteArrow} alt={"arrow"}/>
           </DetailButton>
-          <AddButton><Image src={heart}/>Add to wish list</AddButton>
+          <AddButton><Image src={heart} alt={"heart"}/>Add to wish list</AddButton>
         </InfoWrapper>
       </InfoContainer>
     </BigProductCardContainer>

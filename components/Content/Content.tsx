@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import { router } from "next/client";
+import { useRouter } from "next/router";
 
 import { routesPath } from "../../static/routesPath";
 import { SocialNetworkProps } from '../../static/types';
@@ -51,11 +51,11 @@ const socialNetwork: SocialNetworkProps[] = [
 ];
 
 const Content = ({ postInfo }: IContentProps) => {
+  const router = useRouter();
 
   const redirectToBlog = () => {
     router.push({ pathname: routesPath.blog })
   };
-
 
   return (
     <ContentContainer>

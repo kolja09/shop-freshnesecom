@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 import { RootState } from "../../store/store";
@@ -23,7 +23,7 @@ const ProductCard = () => {
 		<>
 			<Header/>
 			<Search/>
-			<Navigations nameLink={'Products'} link={`${routesPath.searchPage}`} id={currentProduct.id}/>
+			<Navigations nameLink={'Products'} link={`${routesPath.searchPage}`} id={currentProduct?.id}/>
 			<ProductInfoPage product={currentProduct}/>
 			<Footer/>
 		</>
