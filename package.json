@@ -1,11 +1,14 @@
 {
   "name": "Internet-shop-freshnesecom",
   "private": true,
+  "homepage": "https://kolja09.github.io/Internet-shop-freshnesecom/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run dev"
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -30,6 +33,7 @@
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4"
+    "typescript": "4.5.4",
+    "gh-pages": "^3.2.3"
   }
 }

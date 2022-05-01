@@ -10,6 +10,6 @@ export interface LinkProps {
 
 export interface SocialNetworkProps {
 	name: string,
-	img: StaticImageData,
+	img: string,
 	link: string,
 }
