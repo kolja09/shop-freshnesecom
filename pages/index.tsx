@@ -13,6 +13,7 @@ import Comment from "../components/Comment/Comment";
 import CategoryFood from "../components/CategoryFood/CategoryFood";
 import MainPagePosts from "../components/MainPagePosts/MainPagePosts";
 import Footer from "../components/Footer/Footer";
+import Loader from "../components/Loader/Loader";
 
 const Home: NextPage = () => {
 
@@ -23,24 +24,22 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     dispatch(loadProducts())
-  }, []);
-
-  useEffect(() => {
     dispatch(loadBlogs())
   }, []);
 
-  return (
-    <>
-      <Header/>
-      <Search/>
-      <ProductsSection products={products.slice(0, 3)}/>
-      <ProductsSection products={products.slice(3, 6)}/>
-      <ProductsSection products={products.slice(6, 9)}/>
-      <Comment/>
-      <CategoryFood products={products}/>
-      <MainPagePosts postInfo={postInfo}/>
-      <Footer/>
-    </>
+  return (products ?
+      <>
+        <Header/>
+        <Search/>
+        <ProductsSection products={products.slice(0, 3)}/>
+        <ProductsSection products={products.slice(3, 6)}/>
+        <ProductsSection products={products.slice(6, 9)}/>
+        <Comment/>
+        <CategoryFood products={products}/>
+        <MainPagePosts postInfo={postInfo}/>
+        <Footer/>
+      </> :
+    <Loader />
   )
 }
 
