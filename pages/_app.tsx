@@ -9,14 +9,14 @@ import '../globals.css'
 const PageWrapper = styled.div`
   margin: 0 auto;
   max-width: 1920px;
-  background: #E5E5E5;
+  background: #A9A9A9;
 `;
 
 const Container = styled.div`
   max-width: 1260px;
   width: 100%;
   margin: 0 auto;
-  background-color: #fff;
+  background: #fff;
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {

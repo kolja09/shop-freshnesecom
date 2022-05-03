@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 
 import { RootState } from "../store/store";
-import { loadProducts} from "../store/products/action";
+import { loadProducts } from "../store/products/action";
 import { loadBlogs } from "../store/blogs/action";
 
 import Header from "../components/Header/Header";
@@ -13,34 +13,33 @@ import Comment from "../components/Comment/Comment";
 import CategoryFood from "../components/CategoryFood/CategoryFood";
 import MainPagePosts from "../components/MainPagePosts/MainPagePosts";
 import Footer from "../components/Footer/Footer";
-import Loader from "../components/Loader/Loader";
 
 const Home: NextPage = () => {
 
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  const products = useSelector((products: RootState) => products.productReducer.productItems);
-  const postInfo = useSelector((blog: RootState) => blog.blogReducer.blogs);
+	const products = useSelector((products: RootState) => products.productReducer.productItems);
+	const postInfo = useSelector((blog: RootState) => blog.blogReducer.blogs);
 
-  useEffect(() => {
-    dispatch(loadProducts())
-    dispatch(loadBlogs())
-  }, []);
+	useEffect(() => {
+		dispatch(loadProducts())
+		dispatch(loadBlogs())
+	}, []);
 
-  return (products ?
-      <>
-        <Header/>
-        <Search/>
-        <ProductsSection products={products.slice(0, 3)}/>
-        <ProductsSection products={products.slice(3, 6)}/>
-        <ProductsSection products={products.slice(6, 9)}/>
-        <Comment/>
-        <CategoryFood products={products}/>
-        <MainPagePosts postInfo={postInfo}/>
-        <Footer/>
-      </> :
-    <Loader />
-  )
+	return (
+		<>
+			<Header/>
+			<Search/>
+			<ProductsSection products={products.slice(0, 3)}/>
+			<ProductsSection products={products.slice(3, 6)}/>
+			<ProductsSection products={products.slice(6, 9)}/>
+			<Comment/>
+			<CategoryFood products={products}/>
+			<MainPagePosts postInfo={postInfo}/>
+			<Footer/>
+		</>
+
+	)
 }
 
 export default Home

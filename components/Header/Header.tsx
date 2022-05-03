@@ -19,13 +19,21 @@ const Header = () => {
 
   const redirectToProducts = () => {
     router.push({ pathname: routesPath.searchPage })
-  }
+  };
+
+  const redirectToAboutUs = () => {
+    router.push({pathname: routesPath.aboutUs})
+  };
+
+  const redirectToCareers = () => {
+    router.push({pathname: routesPath.careers})
+  };
 
   return (
     <HeaderContainer>
       <LinksContainer>
         <LinkWrapper>
-          <HeaderLink>Chat with us</HeaderLink>
+          <HeaderLink href={'https://t.me/kolja09062005'} >Chat with me</HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
           <HeaderLink href="tel:+380 97 404 23 56" $color="#151515">
@@ -46,10 +54,10 @@ const Header = () => {
           <HeaderLink onClick={redirectToProducts}>Products</HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
-          <HeaderLink>About Us</HeaderLink>
+          <HeaderLink onClick={redirectToAboutUs}>About Us</HeaderLink>
         </LinkWrapper>
         <LinkWrapper>
-          <HeaderLink>Careers</HeaderLink>
+          <HeaderLink onClick={redirectToCareers}>Careers</HeaderLink>
         </LinkWrapper>
       </LinksContainer>
     </HeaderContainer>
